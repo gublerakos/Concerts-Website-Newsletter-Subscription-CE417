@@ -136,6 +136,9 @@ body{
 	text-align: center;
 	justify-self: center;
 }
+
+/* CODE FOR HOVER EFE IN FRONT PAGE  */
+
 .container1 {
 	margin: 10px 10px;
 	position: relative;
@@ -176,3 +179,5 @@ body{
 	transform: translate(-50%, -50%);
 	text-align: center;
 }
+
+/* CODE FOR EFE ENDS HERE */
