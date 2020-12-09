@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="eng">
 
@@ -34,7 +33,16 @@
 	<div class="container1">
     				
                     <a href="${pageContext.servletContext.contextPath}/login.jsp">Login/Signup</a>
-                     <div text-align: right>Hello <%=session.getAttribute("username") %></div>
+                     <c:choose>
+						      <c:when test="${sessionScope.username == NULL}">
+						      		<div text-align: right>Hello quest</div>
+						      <br />
+						      </c:when>
+						      <c:otherwise>
+									<div text-align: right>Hello <%=session.getAttribute("username") %></div>
+						      <br />
+						      </c:otherwise>
+					 </c:choose>          
                      <a href="${pageContext.servletContext.contextPath}/logout">Logout</a>
                 </div>
     <div class="content shadow">

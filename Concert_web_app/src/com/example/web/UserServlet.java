@@ -29,8 +29,14 @@ public class UserServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String action = request.getServletPath();
 		try {
-					logoutUser(request, response);
+			switch(action) {
+			case "/logout":
+				logoutUser(request, response);
+				break;
+			}
+					
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

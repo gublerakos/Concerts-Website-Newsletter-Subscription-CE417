@@ -32,14 +32,14 @@
     				
                     <a href="${pageContext.servletContext.contextPath}/login.jsp">Login/Signup</a>
  					<c:choose>
-						      <c:when test="${sessionScope.username==null}">
+						      <c:when test="${sessionScope.username == NULL}">
 						      		<div text-align: right>Hello quest</div>
 						      <br />
 						      </c:when>
-						      <c:when test="${sessionScope.username!=null}">
+						      <c:otherwise>
 									<div text-align: right>Hello <%=session.getAttribute("username") %></div>
 						      <br />
-						      </c:when>
+						      </c:otherwise>
 					 </c:choose>          
 					  <a href="${pageContext.servletContext.contextPath}/logout">Logout</a>
                 </div>
