@@ -10,20 +10,44 @@
     <link rel="stylesheet" href="shadow.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrapModal.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="sortcut icon" type="image/png" href="favico.png">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myModal").modal('show');
+        });
+    </script>
 </head>
 
 <body>
-    <div>
-        <h1 class="textUp">
-            Find concerts and information for all your favorite bands and 
-            artists in the world. Get concert tickets, news and more with 
-            Art Eagle.
-        </h1>
+
+    <!-- ATTEMPT FOR BOOTSTRAP MODAL -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-header">
+                    <h4 class="modal-title">Subcription</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to be the first to know everything about concerts in the world?</p>
+                </div>
+                <div class="more">
+                    <span><a href="subscribe.html">Subcribe to our Newsletter!</a> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <h1 class="textUp">
+        Find concerts and information for all your favorite bands and artists in the world. Get concert tickets, news and more with Art Eagle.
+    </h1>
     </div>
     <div class="header">
-        <img src="cockatiel-silhouette.png" alt="logo" class="logo">
-        Art Eagle
+        <img src="cockatiel-silhouette.png" alt="logo" class="logo"> Art Eagle
         <h2>...your music concert predator.</h2>
     </div>
     <div class="content">
@@ -99,7 +123,10 @@
     </div>
 
     <footer>
-        <div></div>
+        <div class="flogo">
+            <img src="cockatiel-silhouette-White.png" alt="logo" class="footerLogo">
+            <h1 class="footerText">Art Eagle</h1>
+        </div>
     </footer>
 
 </body>
