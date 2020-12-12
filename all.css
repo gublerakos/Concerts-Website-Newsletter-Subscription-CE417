@@ -139,10 +139,16 @@ footer {
     font-size: 30px;
     font-weight: 100;
     background-image: url(cockatiel-silhouette-White.png);
+    display: none;
 }
 
 .footerLogo {
     width: 50px;
     color: white;
     padding-left: 30px;
+}
+.copy p {
+    color: #eeeeee;
+    font-size: 15px;
+    text-align: center;
 }

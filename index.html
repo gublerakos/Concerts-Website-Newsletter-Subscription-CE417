@@ -8,11 +8,14 @@
     <!-- <meta name="author" content="Maria Pantazi - mpantazi-@uth.gr"> -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="shadow.css">
+    <link rel="stylesheet" href="bootstrapModal.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrapModal.css">
+
+    <link rel="stylesheet" href="contact.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link rel="sortcut icon" type="image/png" href="favico.png">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
@@ -41,11 +44,10 @@
             </div>
         </div>
     </div>
-    </div>
     <h1 class="textUp">
         Find concerts and information for all your favorite bands and artists in the world. Get concert tickets, news and more with Art Eagle.
     </h1>
-    </div>
+
     <div class="header">
         <img src="cockatiel-silhouette.png" alt="logo" class="logo"> Art Eagle
         <h2>...your music concert predator.</h2>
@@ -77,7 +79,7 @@
 
             </div>
         </div>
-        <div style="background-color: #F8EDEF;"></div>
+        <div style="background-color: #EDEDED;"></div>
         <div class="mainMenu shadow">
             <div class="concerts">
                 <div class="container1">
@@ -118,15 +120,25 @@
                 </div>
 
             </div>
-
         </div>
     </div>
+    <div class="contact shadow">
+        <h1>Contact Us</h1>
+        <div class="contact_form">
+            <form id="contact_form" method="post" action="contactFormHandler.php">
+                <input type="text" name="name" class="form_control" placeholder="Full Name" required><br>
 
-    <footer>
-        <div class="flogo">
-            <img src="cockatiel-silhouette-White.png" alt="logo" class="footerLogo">
-            <h1 class="footerText">Art Eagle</h1>
+                <input type="text" name="email" class="form_control" placeholder="Email" required><br>
+
+                <textarea name="message" class="form_control" placeholder="Text" rows="5" required></textarea><br>
+
+                <input type="submit" name="" class="form_control submit" value="SEND">
+            </form>
         </div>
+
+    </div>
+    <footer>
+        <script src="footer.js"></script>
     </footer>
 
 </body>
