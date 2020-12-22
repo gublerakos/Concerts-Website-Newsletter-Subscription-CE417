@@ -1,3 +1,7 @@
+<?php
+    
+?>
+
 <!DOCTYPE html>
 <html lang="eng">
 
@@ -10,12 +14,13 @@
     <link rel="stylesheet" href="shadow.css">
     <link rel="stylesheet" href="bootstrapModal.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-
+ 
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link rel="sortcut icon" type="image/png" href="favico.png">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
@@ -28,7 +33,7 @@
 <body>
 
     <!-- ATTEMPT FOR BOOTSTRAP MODAL -->
-    <div id="myModal" class="modal fade">
+    <!-- <div id="myModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -43,15 +48,28 @@
                 </div>
             </div>
         </div>
-    </div>
-    <h1 class="textUp">
-        Find concerts and information for all your favorite bands and artists in the world. Get concert tickets, news and more with Art Eagle.
-    </h1>
+    </div> -->
+    <div>
+        
+        <h1 class="textUp">
+            Find concerts and information for all your favorite bands and artists in the world. Get concert tickets, news and more with Art Eagle.
+        </h1>
+        
+    </div>    
+    <nav class="buttons">
+        <ul>
+            <li class="btn"><a href="login.php">LOGIN<i class="material-icons left">login</i></a></li>
+            <li class="btn"><a href="register.php">SIGN UP<i class="material-icons left">person_add</i></a></li>
+        </ul>
+    </nav>
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
 
     <div class="header">
         <img src="cockatiel-silhouette.png" alt="logo" class="logo"> Art Eagle
         <h2>...your music concert predator.</h2>
     </div>
+
+
     <div class="content">
         <div class="sideMenu shadow">
             <a href="rock.html">Rock</a>
@@ -74,7 +92,8 @@
             <img src="rhcp.jpg" alt="trendingNow" class="trending">
             <div class="overlay">
                 <a href="trending.html" class="text">Trending Now
-                    <br><h2 class="text2">click for more</h2>
+                    <br>
+                    <h2 class="text2">click for more</h2>
                 </a>
 
             </div>
