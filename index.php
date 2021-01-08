@@ -1,5 +1,5 @@
 <?php
-    
+    include('session.php');
 ?>
 
 <!DOCTYPE html>
@@ -49,21 +49,25 @@
             </div>
         </div>
     </div> -->
-    <div>
+    
         
-        <h1 class="textUp">
-            Find concerts and information for all your favorite bands and artists in the world. Get concert tickets, news and more with Art Eagle.
-        </h1>
+    <div class="textUp">
+        <h1 class="letters">Find concerts and information for all your favorite bands and artists in the world. Get concert tickets, news and more with Art Eagle.</h1>
+        <nav class="buttons">
+            <?php if(!isset($_SESSION['login_user'])){ ?>
+                <ul>
+                    <li class="btn"><a href="login.php">Login<i class="material-icons left">login</i></a></li>
+                    <li class="btn"><a href="register.php">Sign Up<i class="material-icons left">person_add</i></a></li>
+            </ul>
+            <?php } else { ?>
+                <ul>
+                    <li class="btn shadow"><a href ="logout.php">Sign Out</a><i class="material-icons">keyboard_return</i></li>
+                    <li class="btn shadow"><a href="profil.php"><?php echo $login_session; ?><i class="material-icons">face</i></a></li> 
+                </ul>
+            <?php } ?>
+        </nav>
+    </div>
         
-    </div>    
-    <nav class="buttons">
-        <ul>
-            <li class="btn"><a href="login.php">LOGIN<i class="material-icons left">login</i></a></li>
-            <li class="btn"><a href="register.php">SIGN UP<i class="material-icons left">person_add</i></a></li>
-        </ul>
-    </nav>
-    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
-
     <div class="header">
         <img src="cockatiel-silhouette.png" alt="logo" class="logo"> Art Eagle
         <h2>...your music concert predator.</h2>
@@ -72,17 +76,17 @@
 
     <div class="content">
         <div class="sideMenu shadow">
-            <a href="rock.html">Rock</a>
-            <a href="pop.html">Pop</a>
-            <a href="blues.html">Blues</a>
-            <a href="country.html">Country</a>
-            <a href="electronic.html">Electronic</a>
-            <a href="folk.html">Folk</a>
-            <a href="hiphop.html">Hip Hop</a>
-            <a href="jazz.html">Jazz</a>
-            <a href="latin.html">Latin</a>
-            <a href="heavymetal.html">Heavy Metal</a>
-            <a href="kpop.html">K-pop</a>
+            <a href="rock.php">Rock</a>
+            <a href="pop.php">Pop</a>
+            <a href="blues.php">Blues</a>
+            <a href="country.php">Country</a>
+            <a href="electronic.php">Electronic</a>
+            <a href="folk.php">Folk</a>
+            <a href="hiphop.php">Hip Hop</a>
+            <a href="jazz.php">Jazz</a>
+            <a href="latin.php">Latin</a>
+            <a href="heavymetal.php">Heavy Metal</a>
+            <a href="kpop.php">K-pop</a>
 
             <!-- MORE MUSIC GENRES HERE -->
 
@@ -91,7 +95,7 @@
         <div class="trendingNow shadow">
             <img src="rhcp.jpg" alt="trendingNow" class="trending">
             <div class="overlay">
-                <a href="trending.html" class="text">Trending Now
+                <a href="trending.php" class="text">Trending Now
                     <br>
                     <h2 class="text2">click for more</h2>
                 </a>

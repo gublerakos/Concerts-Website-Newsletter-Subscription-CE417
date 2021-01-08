@@ -1,21 +1,9 @@
 <?php
-
-$host="localhost";
-$user="root";
-$password="12345";
-$db="demo";
-
-
-$conn =  mysqli_connect($host, $user, $password, $db);
-if ($conn -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $conn -> connect_error;
-    exit();
-}
+include("config.php");
 session_start();
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-// if(isset($_POST['username'])){
 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $uname=$_POST['username'];
     $password=$_POST['password'];
@@ -23,10 +11,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $sql="select * from users where username='".$uname."'AND password='".$password."'";
     $result=mysqli_query($conn, $sql);
+
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
+
     $num_results = $result->num_rows;
-    if($num_results==1){
+    if($num_results == 1){
+        $_SESSION['login_user'] = $uname;
+    
         header("Location: index.php");
-        echo " You Have Successfully Logged in";
         exit();
     }
     else{
@@ -65,7 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <input type="password" name="password" placeholder="Password"/>
         <!-- <input type="submit" type="submit" value="LOGIN" class="btn-login"/> -->
         <button>login</button>
-        <p class="message">Not registered? <a href="register.php">Create an account</a></p>
+        <p class="message">Not registered yet? <a href="register.php">Create an account</a></p>
         </form>
     </div>
     </div>

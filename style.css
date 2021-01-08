@@ -15,15 +15,28 @@ body {
 }
 
 .textUp {
+    display: grid;
+    background-color: #C692C8;
+    grid-template-columns: 200px auto 200px;
+    grid-template-areas: ". letters buttons";
+}
+
+.letters {
+    grid-area: letters;
+    padding: 20px;
     font-size: 17px;
     text-align: center;
-    background-color: #C692C8;
-    padding: 20px;
     font-weight: 100;
 }
 
+.buttons {
+    margin-top: 5px;
+    grid-area: buttons;
+    /* background-color: white; */
+}
+
 .header {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     height: 150px;
     font-family: Georgia, serif;
     color: black;
@@ -58,6 +71,8 @@ body {
     float: right;
     /* width: 50%; */
     padding: 5px;
+    /* border: 2px solid black; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .content {

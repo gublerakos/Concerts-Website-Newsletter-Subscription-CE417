@@ -1,0 +1,16 @@
+document.write('    <div class=\"textUp\">\n');
+document.write('        \n');
+document.write('        <nav class=\"buttons\">\n');
+document.write('            <?php if(!isset($_SESSION[\'login_user\'])){ ?>\n');
+document.write('                <ul>\n');
+document.write('                    <li class=\"btn\"><a href=\"login.php\">LOGIN<i class=\"material-icons left\">login</i></a></li>\n');
+document.write('                    <li class=\"btn\"><a href=\"register.php\">SIGN UP<i class=\"material-icons left\">person_add</i></a></li>\n');
+document.write('            </ul>\n');
+document.write('            <?php } else { ?>\n');
+document.write('                <ul>\n');
+document.write('                    <li class=\"btn shadow\"><a href =\"logout.php\">Sign Out</a><i class=\"material-icons\">keyboard_return</i></li>\n');
+document.write('                    <li class=\"btn shadow\"><a href=\"profil.php\"><?php echo $login_session; ?><i class=\"material-icons\">face</i></a></li> \n');
+document.write('                </ul>\n');
+document.write('            <?php } ?>\n');
+document.write('        </nav>\n');
+document.write('    </div>');

@@ -1,16 +1,6 @@
 <?php
 
-$host="localhost";
-$user="root";
-$password="12345";
-$db="demo";
-
-
-$conn =  mysqli_connect($host, $user, $password, $db);
-if ($conn -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $conn -> connect_error;
-    exit();
-}
+include("config.php");
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -20,19 +10,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $uname=$_POST['username'];
     $password=$_POST['password'];
     $password2=$_POST['password2'];
-    // $email=$_POST['email'];
+    $email=$_POST['email'];
+    $phone=$_POST['phone'];
 
     $data = $_POST;
 
     if (empty($data['username']) || empty($data['password']) || empty($data['password2'])) {
         die('Please fill all required fields!');
+        // $flag =1; //fill all fields
     }
 
     if ($data['password'] !== $data['password2']) {
         die('Password and Confirm password should match!');   
     }
 
-    $sql="select * from users where username='".$uname."'AND password='".$password."'";
+    $sql="select * from users where username='".$uname."'";
     $result=mysqli_query($conn, $sql);
 
     $num_results = $result->num_rows;
@@ -42,8 +34,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         exit();
     }
     else{
-        $ins = "insert into users (username,password) values ('".$uname."','".$password."')";
+        $ins = "insert into users (username,password,email,phone) values ('".$uname."','".$password."','".$email."','".$phone."')";
         $result=mysqli_query($conn, $ins);
+        $_SESSION['login_user'] = $uname;
         header("Location: index.php");
         exit(0);
     }
@@ -77,7 +70,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <input type="text" name="username" placeholder="Username"/>
         <input type="password" name="password" placeholder="Password"/>
         <input type="password" name="password2" placeholder="Confirm Password"/>
-        <!-- <input type="email" name="email" placeholder="E-mail"/> -->
+        <input type="email" name="email" placeholder="E-mail"/>
+        <input type="phone" name="phone" placeholder="Phone number"/>
         <!-- <input type="submit" type="submit" value="LOGIN" class="btn-login"/> -->
         <button>sign up</button>
         <p class="message">Already a member? <a href="login.php">Sign in!</a></p>
