@@ -47,62 +47,32 @@
     <div class="content shadow">
         <h1 class="title">Pop</h1>
         <div class="concerts">
-            <a href="taylorSwiftConcert.html" class="container1">
-                <img src="images/pop/taylorswift.png" alt="Taylor Swift" class="image1">
-                <div class="overlay1">
-                    <div class="text1">Taylor Swift <br> click for more </div>
-                </div>
-            </a>
-            <a href="beyonceConcert.html" class="container1">
+            <a href="beyonceConcert.php" class="container1">
                 <img src="images/pop/beyonce.png" alt="Beyonce" class="image1">
                 <div class="overlay1">
                     <div class="text1">Beyonce <br> click for more </div>
                 </div>
             </a>
-            <a href="harryStylesConcert.html" class="container1">
-                <img src="images/pop/harry_styles.png" alt="Harry Styles" class="image1">
-                <div class="overlay1">
-                    <div class="text1">Harry Styles <br> click for more </div>
-                </div>
-            </a>
-            <a href="katyPerryConcert.html" class="container1">
-                <img src="images/pop/katy_perry.png" alt="Katy Perry" class="image1">
-                <div class="overlay1">
-                    <div class="text1">Katy Perry <br> click for more </div>
-                </div>
-            </a>
-            <a href="edSheeranConcert.html" class="container1">
+            <a href="edSheeranConcert.php" class="container1">
                 <img src="images/pop/ed_sheeran.png" alt="Ed Sheeran" class="image1">
                 <div class="overlay1">
                     <div class="text1">Ed Sheeran <br> click for more </div>
                 </div>
             </a>
-            <a href="ladyGagaConcert.html" class="container1">
+            <a href="ladyGagaConcert.php" class="container1">
                 <img src="images/pop/lady_gaga.png" alt="Lady Gaga" class="image1">
                 <div class="overlay1">
                     <div class="text1">Lady Gaga <br> click for more </div>
                 </div>
             </a>
-            <a href="rihannaConcert.html" class="container1">
-                <img src="images/pop/rihanna.png" alt="Rihanna" class="image1">
-                <div class="overlay1">
-                    <div class="text1">Rihanna <br> click for more </div>
-                </div>
-            </a>
-            <a href="justinBieberConcert.html" class="container1">
+            <a href="justinBieberConcert.php" class="container1">
                 <img src="images/pop/justin_bieber.png" alt="Justin Bieber" class="image1">
                 <div class="overlay1">
                     <div class="text1">Justin Bieber <br> click for more </div>
                 </div>
             </a>
-            <a href="brunoMarsConcert.html" class="container1">
-                <img src="images/pop/bruno_mars.png" alt="Bruno Mars" class="image1">
-                <div class="overlay1">
-                    <div class="text1">Bruno Mars <br> click for more </div>
-                </div>
-            </a>
         </div>
-
+        <br><br><br><br><br>
     </div>
 
     <script src="footer.js"></script>

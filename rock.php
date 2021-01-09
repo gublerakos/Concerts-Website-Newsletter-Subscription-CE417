@@ -59,12 +59,6 @@
                     <div class="text1">Bon Jovi <br> click for more </div>
                 </div>
             </a>
-            <a href="eltonJohnConcert.php" class="container1">
-                <img src="images/rock/elton_john.png" alt="Elton John" class="image1">
-                <div class="overlay1">
-                    <div class="text1">Elton John <br> click for more </div>
-                </div>
-            </a>
             <a href="GunsConcert.php" class="container1">
                 <img src="images/rock/gunsnroses.png" alt="Guns N' Roses" class="image1">
                 <div class="overlay1">
@@ -77,13 +71,8 @@
                     <div class="text1">Bryan Adams <br> click for more </div>
                 </div>
             </a>
-            <a href="killersConcert.php" class="container1">
-                <img src="images/rock/thekillers.png" alt="The Killers" class="image1">
-                <div class="overlay1">
-                    <div class="text1">The Killers <br> click for more </div>
-                </div>
-            </a>
         </div>
+        <br><br><br><br><br>
     </div>
 
     <script src="footer.js"></script>

@@ -78,22 +78,20 @@
         <div class="sideMenu shadow">
             <a href="rock.php">Rock</a>
             <a href="pop.php">Pop</a>
-            <a href="blues.php">Blues</a>
-            <a href="country.php">Country</a>
-            <a href="electronic.php">Electronic</a>
-            <a href="folk.php">Folk</a>
+            <a href="blues.php">Jazz/Blues</a>
+            <a href="electronic.php">Electronic/House</a>
             <a href="hiphop.php">Hip Hop</a>
-            <a href="jazz.php">Jazz</a>
+            <a href="jazz.php">Alternative</a>
             <a href="latin.php">Latin</a>
-            <a href="heavymetal.php">Heavy Metal</a>
+            <a href="metal.php">Metal</a>
             <a href="kpop.php">K-pop</a>
-
+            <a href="entexno.php">Entexno</a>
             <!-- MORE MUSIC GENRES HERE -->
 
         </div>
         <div class="empty"></div>
         <div class="trendingNow shadow">
-            <img src="rhcp.jpg" alt="trendingNow" class="trending">
+            <img src="rhcp2.jpg" alt="trendingNow" class="trending">
             <div class="overlay">
                 <a href="trending.php" class="text">Trending Now
                     <br>
@@ -105,42 +103,42 @@
         <div style="background-color: #EDEDED;"></div>
         <div class="mainMenu shadow">
             <div class="concerts">
-                <div class="container1">
-                    <img src="billie.jpg" alt="Avatar" class="image1">
+                <a href="ladyGagaConcert.php" class="container1">
+                    <img src="images/pop/lady_gaga.png" alt="lady gaga" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Billie Eillish <br> click for more </div>
+                        <div class="text1">Lady Gaga <br> click for more </div>
                     </div>
-                </div>
-                <div class="container1">
-                    <img src="billie.jpg" alt="Avatar" class="image1">
+                </a>
+                <a href="muse.php" class="container1">
+                    <img src="images/rock/Muse.png" alt="muse" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Billie Eillish <br> click for more </div>
+                        <div class="text1">Muse <br> click for more </div>
                     </div>
-                </div>
-                <div class="container1">
-                    <img src="billie.jpg" alt="Avatar" class="image1">
+                </a>
+                <a href="edSheeranConcert.php" class="container1">
+                    <img src="images/pop/ed_sheeran.png" alt="ed sheeran" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Billie Eillish <br> click for more </div>
+                        <div class="text1">Ed Sheeran <br> click for more </div>
                     </div>
-                </div>
-                <div class="container1">
-                    <img src="billie.jpg" alt="Avatar" class="image1">
+                </a>
+                <a href="beyonceConcert.php" class="container1">
+                    <img src="images/pop/beyonce.png" alt="beyonce" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Billie Eillish <br> click for more </div>
+                        <div class="text1">Beyonce <br> click for more </div>
                     </div>
-                </div>
-                <div class="container1">
-                    <img src="billie.jpg" alt="Avatar" class="image1">
+                </a>
+                <a href="killers.php" class="container1">
+                    <img src="images/rock/thekillers.png" alt="killers" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Billie Eillish <br> click for more </div>
+                        <div class="text1">The Killers <br> click for more </div>
                     </div>
-                </div>
-                <div class="container1">
-                    <img src="billie.jpg" alt="Avatar" class="image1">
+                </a>
+                <a href="BryanAdamsConcert.php" class="container1">
+                    <img src="images/rock/bryan_adams.png" alt="bryan adams" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Billie Eillish <br> click for more </div>
+                        <div class="text1">Bryan Adams <br> click for more </div>
                     </div>
-                </div>
+                </a>
 
             </div>
         </div>

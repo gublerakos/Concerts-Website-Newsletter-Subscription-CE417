@@ -43,32 +43,25 @@
         <img src="cockatiel-silhouette.png" alt="logo" class="logo">
         <a href="index.php" class="mainPage">Art Eagle</a>
     </div>
-
     <div class="content shadow">
-        <h1 class="title">Jazz-Blues</h1>
+        <h1 class="title">K-Pop</h1>
         <div class="concerts">
-            <a href="alabamaShakes.php" class="container1">
-                <img src="images/blues/scotthbiram.png" alt="Alabama Shakes" class="image1">
+            <a href="bts.php" class="container1">
+                <img src="images/kpop/bts.png" alt="BTS" class="image1">
                 <div class="overlay1">
-                    <div class="text1">Alabama Shakes <br> click for more </div>
+                    <div class="text1">BTS <br> click for more </div>
                 </div>
             </a>
-            <a href="blackPumas.php" class="container1">
-                <img src="images/blues/bonjovi.png" alt="Black Pumas" class="image1">
+            <a href="blackPink.php" class="container1">
+                <img src="images/kpop/blackpink.png" alt="BlackPink" class="image1">
                 <div class="overlay1">
-                    <div class="text1">Black Pumas <br> click for more </div>
+                    <div class="text1">BlackPink <br> click for more </div>
                 </div>
             </a>
-            <a href="binkerAndMoses.php" class="container1">
-                <img src="images/blues/elton_john.png" alt="Binker and Moses" class="image1">
+            <a href="exo.php" class="container1">
+                <img src="images/kpop/exo.png" alt="EXO" class="image1">
                 <div class="overlay1">
-                    <div class="text1">Binker and Moses <br> click for more </div>
-                </div>
-            </a>
-            <a href="jazzmeiaHorn.php" class="container1">
-                <img src="images/blues/elton_john.png" alt="Jazzmeia Horn" class="image1">
-                <div class="overlay1">
-                    <div class="text1">Jazzmeia Horn <br> click for more </div>
+                    <div class="text1">EXO <br> click for more </div>
                 </div>
             </a>
         </div>

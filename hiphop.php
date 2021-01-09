@@ -43,32 +43,31 @@
         <img src="cockatiel-silhouette.png" alt="logo" class="logo">
         <a href="index.php" class="mainPage">Art Eagle</a>
     </div>
-
     <div class="content shadow">
-        <h1 class="title">Jazz-Blues</h1>
+        <h1 class="title">Hip Hop</h1>
         <div class="concerts">
-            <a href="alabamaShakes.php" class="container1">
-                <img src="images/blues/scotthbiram.png" alt="Alabama Shakes" class="image1">
+            <a href="eminem.php" class="container1">
+                <img src="images/hiphop/eminem.png" alt="Eminem" class="image1">
                 <div class="overlay1">
-                    <div class="text1">Alabama Shakes <br> click for more </div>
+                    <div class="text1">Eminem <br> click for more </div>
                 </div>
             </a>
-            <a href="blackPumas.php" class="container1">
-                <img src="images/blues/bonjovi.png" alt="Black Pumas" class="image1">
+            <a href="yg.php" class="container1">
+                <img src="images/hiphop/yg.png" alt="YG" class="image1">
                 <div class="overlay1">
-                    <div class="text1">Black Pumas <br> click for more </div>
+                    <div class="text1">YG <br> click for more </div>
                 </div>
             </a>
-            <a href="binkerAndMoses.php" class="container1">
-                <img src="images/blues/elton_john.png" alt="Binker and Moses" class="image1">
+            <a href="bloodyHawk.php" class="container1">
+                <img src="images/hiphop/bloodyHawk.png" alt="Bloody Hawk" class="image1">
                 <div class="overlay1">
-                    <div class="text1">Binker and Moses <br> click for more </div>
+                    <div class="text1">Bloody Hawk <br> click for more </div>
                 </div>
             </a>
-            <a href="jazzmeiaHorn.php" class="container1">
-                <img src="images/blues/elton_john.png" alt="Jazzmeia Horn" class="image1">
+            <a href="12pithikos.php" class="container1">
+                <img src="images/hiphop/12pithikos.png" alt="12pithikos" class="image1">
                 <div class="overlay1">
-                    <div class="text1">Jazzmeia Horn <br> click for more </div>
+                    <div class="text1">12 Pithikos <br> click for more </div>
                 </div>
             </a>
         </div>
