@@ -53,12 +53,7 @@
             echo $_SESSION["flag"];
         }*/
     //}
-    if(array_key_exists('button1', $_POST)) { 
-        button1(); 
-    } 
-    else{
-        noButtonPressed();
-    }
+    
     function button1() { 
         include("config.php");
         if(isset($conn)){echo "its ok\n";}
@@ -78,21 +73,23 @@
         //$all_favorites = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if($all_favorites==0){//an einai hdh favorite
-            $heart_icon = "fa  fa-heart";
+            $heart_icon = "fa fa-heart";
             $flag = 1;
             echo $flag;
             $insert = "insert into favorites (user_id, concert_id) values ('".$tempu."','".$tempc."')";
             $row = mysqli_query($conn, $insert);
+            return $heart_icon;
             header("Location: trending.php");
             //$stmt = $pdo->prepare($delete);
             //$stmt->execute();
         }
         else{
-            $heart_icon = "material-icons mdc-icon-button__icon";
+            $heart_icon = "fa fa-heart-o";
             $flag = 0;
             echo $flag;
             $delete = "delete from favorites WHERE concert_id = '".$tempc."'AND user_id = '".$tempu."'";
             $row = mysqli_query($conn, $delete);
+            return $heart_icon;
             header("Location: trending.php");
             //$stmt = $pdo->prepare($insert);
             //$stmt->execute();
@@ -120,12 +117,14 @@
             $flag = 1;
             echo $flag;
             echo $heart_icon;
+            return $heart_icon;
         }
         else{
-            $heart_icon = "material-icons mdc-icon-button__icon";
+            $heart_icon = "fa fa-heart-o";
             $flag = 0;
             echo $flag;
             echo $heart_icon;
+            return $heart_icon;
         }
     } 
     /*
@@ -271,8 +270,17 @@
                     }
                     echo $heart_icon;
                     ?>
+                    <?php 
+                    if(array_key_exists('button1', $_POST)) { 
+                        $hi = button1(); 
+                    } 
+                    else{
+                        $hi = noButtonPressed();
+                    }
+                    ?>
                     <!--<input type="hidden" name="button" value="<?//=$flag?>" class="<?//=$heart_icon?>">-->
-                    <button type="submit" name="button1" value="Button1" > <i class="fa fa-heart" aria-hidden="true">Add/Remove from Favorites</i></button>
+                    <button type="submit" name="button1" value="Button1" > <i class="<?= $hi?>" aria-hidden="true">Add/Remove from Favorites</i></button>
+                    
                     <!--<input type="submit" value="Add To Cart">-->
                 <?//php } else{echo "notFavorite";?>
                     <!--<button type="favorite"><i class="material-icons mdc-icon-button__icon">favorite_border</i></button>-->
