@@ -1,5 +1,5 @@
 <?php
-    //include("config.php");
+    include("config.php");
     include("session.php");
     include 'functions.php';
     $pdo = pdo_connect_mysql();
@@ -17,7 +17,7 @@
 
     
 
-    if($_SERVER["REQUEST_METHOD"] == "GET"){
+    //if($_SERVER["REQUEST_METHOD"] == "GET"){
         $sql="select * from concerts where artist='Red Hot Chilly Peppers'";
         $row = mysqli_query($conn, $sql);
         $result = $row->fetch_assoc();
@@ -52,7 +52,7 @@
             $_SESSION["flag"] = $flag;
             echo $_SESSION["flag"];
         }*/
-    }
+    //}
     if(array_key_exists('button1', $_POST)) { 
         button1(); 
     } 
@@ -60,52 +60,72 @@
         noButtonPressed();
     }
     function button1() { 
+        include("config.php");
+        if(isset($conn)){echo "its ok\n";}
+        $tempc =  $_GET['id'];
+        echo $tempc;
+        $tempu =  $_SESSION['login_user'];
+        echo $tempu;
         echo "This is Button1 that is selected"; 
-        $sql = "select * from favorites where concert_id = '".$concert_id."' AND user_id = '".$uname."'";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $all_favorites = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $num_results = $all_favorites->num_rows;
-        if($num_results==1){//an einai hdh favorite
+        $sql = "select * from favorites where concert_id = '".$tempc."' AND user_id = '".$tempu."'";
+        $row = mysqli_query($conn, $sql);
+        $all_favorites = $row->fetch_assoc();
+        echo "hey";
+
+        //$sql = "select * from favorites where concert_id = '".$concert_id."' AND user_id = '".$uname."'";
+        //$stmt = $pdo->prepare($sql);
+        //$stmt->execute();
+        //$all_favorites = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if($all_favorites==0){//an einai hdh favorite
             $heart_icon = "fa  fa-heart";
             $flag = 1;
             echo $flag;
-            $delete = "delete from favorites WHERE concert_id = '".$concert_id."'AND user_id = '".$uname."'";
-            $stmt = $pdo->prepare($delete);
-            $stmt->execute();
+            $insert = "insert into favorites (user_id, concert_id) values ('".$tempu."','".$tempc."')";
+            $row = mysqli_query($conn, $insert);
+            header("Location: trending.php");
+            //$stmt = $pdo->prepare($delete);
+            //$stmt->execute();
         }
         else{
             $heart_icon = "material-icons mdc-icon-button__icon";
             $flag = 0;
             echo $flag;
-            $insert = "insert into favorites (user_id, concert_id) values ('".$uname."','".$concert_id."')";
-            $stmt = $pdo->prepare($insert);
-            $stmt->execute();
+            $delete = "delete from favorites WHERE concert_id = '".$tempc."'AND user_id = '".$tempu."'";
+            $row = mysqli_query($conn, $delete);
+            header("Location: trending.php");
+            //$stmt = $pdo->prepare($insert);
+            //$stmt->execute();
         }
     }
     
     function noButtonPressed() { 
-        echo $concert_id;
-        echo "No BUtton has been pressed yet"; //initialisation state, just setting the parameters
-        $sql = "select * from favorites where concert_id = '20'";
+        include("config.php");
+        if(isset($conn)){echo "its ok\n";}
+        $tempc =  $_GET['id'];
+        echo $tempc;
+        $tempu =  $_SESSION['login_user'];
+        echo $tempu;
+        echo "No Button has been pressed yet"; //initialisation state, just setting the parameters
+        $sql = "select * from favorites where concert_id = '".$tempc."'";
         $row = mysqli_query($conn, $sql);
         $all_favorites = $row->fetch_assoc();
         echo "hey";
         
         //$stmt = $pdo->prepare($sql);
-        echo "hello";
         //$stmt->execute();
         //$all_favorites = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo "No Button has been pressed yet"; //initialisation state, just setting the parameters
         if($all_favorites>0){//an einai hdh favorite
-            $heart_icon = "fa  fa-heart";
+            $heart_icon = "fa fa-heart";
             $flag = 1;
             echo $flag;
+            echo $heart_icon;
         }
         else{
             $heart_icon = "material-icons mdc-icon-button__icon";
             $flag = 0;
             echo $flag;
+            echo $heart_icon;
         }
     } 
     /*
@@ -246,14 +266,13 @@
         <div class="info">
             <form method="post">
                 <!-- id="click_advance"  fa fa-heart material-icons mdc-icon-button__icon-->
-                <?php if(isset($_SESSION["favorited"])){
-                            echo "alreadyFavorite";
+                <?php if($flag==1){
+                            echo "alreadyFavorite\n";
                     }
+                    echo $heart_icon;
                     ?>
-                    <!--<button type="favorite" name="button" value="<?//=$flag?>" class="<?//=$heart_icon?>"></i></button>-->
                     <!--<input type="hidden" name="button" value="<?//=$flag?>" class="<?//=$heart_icon?>">-->
-                    <button type="submit" name="button1"
-                            value="Button1" > <i class="<?=$heart_icon?>">favorite_border</i></button>
+                    <button type="submit" name="button1" value="Button1" > <i class="fa fa-heart" aria-hidden="true">Add/Remove from Favorites</i></button>
                     <!--<input type="submit" value="Add To Cart">-->
                 <?//php } else{echo "notFavorite";?>
                     <!--<button type="favorite"><i class="material-icons mdc-icon-button__icon">favorite_border</i></button>-->
@@ -281,8 +300,6 @@
     <footer>
         <script src="footer.js"></script>
     </footer>
-    <?php
-    unset($_SESSION["favorited"]);
-    ?>
+
     </body>
 </html>
