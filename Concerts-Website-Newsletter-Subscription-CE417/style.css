@@ -1,0 +1,291 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: #EDEDED;
+    /* background-color: red; */
+}
+
+.textUp {
+    display: grid;
+    background-color: #C692C8;
+    grid-template-columns: 200px auto 200px;
+    grid-template-areas: ". letters buttons";
+}
+
+.letters {
+    grid-area: letters;
+    padding: 20px;
+    font-size: 17px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.buttons {
+    margin-top: 5px;
+    grid-area: buttons;
+    /* background-color: white; */
+}
+
+.header {
+    /* margin-top: 40px; */
+    height: 150px;
+    font-family: Georgia, serif;
+    color: black;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 100;
+    text-align: center;
+    font-size: 80px;
+}
+
+.header h2 {
+    font-size: 25px;
+    margin-left: 850px;
+    font-variant: normal;
+    font-weight: normal;
+}
+
+.header a {
+    text-align: right;
+}
+
+.logo {
+    width: 90px;
+}
+
+.buttons a {
+    color: black;
+    text-decoration: none;
+}
+
+.btn {
+    float: right;
+    /* width: 50%; */
+    padding: 5px;
+    /* border: 2px solid black; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.content {
+    background-color: white;
+    width: 1400px;
+    height: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 390px 10px 1000px;
+    grid-template-rows: 600px 10px auto;
+}
+
+.sideMenu {
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.sideMenu a {
+    height: 35px;
+    margin-top: 15px;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    display: block;
+    padding: 8px 8px 8px 32px;
+}
+
+.sideMenu a:hover {
+    font-size: 32px;
+}
+
+.empty {
+    background-color: #EDEDED;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.trendingNow {
+    position: relative;
+}
+
+.trending {
+    display: block;
+    width: 980px;
+    height: 580px;
+    margin: 10px auto 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    color: white;
+}
+
+.trendingNow:hover .overlay {
+    opacity: 1;
+}
+
+.trendingNow:hover .text {
+    font-size: 60px;
+}
+
+.trendingNow:hover .text2 {
+    font-size: 32px;
+}
+
+.trendingNow:hover .trending {
+    opacity: 0.8;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    transition: .2s ease-out;
+    text-decoration: none;
+}
+
+.text2 {
+    font-size: 30px;
+}
+
+.mainMenu {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding: 10px;
+}
+
+.concerts {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+}
+
+
+/* CODE FOR HOVER EFE IN FRONT PAGE  */
+
+.container1 {
+    margin: 10px 10px;
+    position: relative;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.image1 {
+    display: block;
+    width: 300px;
+    height: 300px;
+}
+
+.overlay1 {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #F8EDEF;
+    overflow: hidden;
+    width: 300px;
+    height: 0;
+    transition: .5s ease;
+}
+
+.container1:hover .overlay1 {
+    bottom: 0;
+    height: 100%;
+}
+
+.text1 {
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.contact {
+    background-color: white;
+    margin-top: 50px;
+    height: 500px;
+    width: 1400px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact h1 {
+    padding: 10px;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 100;
+}
+
+
+/* CODE FOR EFE ENDS HERE */
+
+footer {
+    margin-top: 20px;
+    display: block;
+    /* text-align: center; */
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    height: 150px;
+    width: 100%;
+}
+
+.flogo {
+    margin-top: 30px;
+    /* margin-left: 40px; */
+    text-align: center;
+}
+
+.footerText {
+    color: white;
+    /* text-align: left; */
+    padding-left: 70px;
+    font-size: 30px;
+    font-weight: 100;
+    background-image: url(cockatiel-silhouette-White.png);
+    display: none;
+}
+
+.footerLogo {
+    width: 50px;
+    color: white;
+    padding-left: 30px;
+}
+
+.copy p {
+    color: #eeeeee;
+    font-size: 15px;
+    text-align: center;
+}
