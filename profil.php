@@ -11,10 +11,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta name="author" content="Maria Pantazi - mpantazi-@uth.gr"> -->
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="shadow.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/shadow.css">
 
-    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="css/all.css">
     
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

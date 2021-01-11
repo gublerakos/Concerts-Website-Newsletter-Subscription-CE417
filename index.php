@@ -1,5 +1,10 @@
 <?php
     include('session.php');
+    include('config.php');
+    // get rhcp as trending by  finding the id on the database
+    $stmt="select * from concerts where artist='Red Hot Chilly Peppers'";
+    $row = mysqli_query($conn, $stmt);
+    $trending_concert = $row->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -10,12 +15,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta name="author" content="Maria Pantazi - mpantazi-@uth.gr"> -->
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="shadow.css">
-    <link rel="stylesheet" href="bootstrapModal.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/shadow.css">
+    <link rel="stylesheet" href="css/bootstrapModal.css">
 
  
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="style.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -76,16 +81,16 @@
 
     <div class="content">
         <div class="sideMenu shadow">
-            <a href="rock.php">Rock</a>
-            <a href="pop.php">Pop</a>
-            <a href="blues.php">Jazz/Blues</a>
-            <a href="electronic.php">Electronic/House</a>
-            <a href="hiphop.php">Hip Hop</a>
-            <a href="jazz.php">Alternative</a>
-            <a href="latin.php">Latin</a>
-            <a href="metal.php">Metal</a>
-            <a href="kpop.php">K-pop</a>
-            <a href="entexno.php">Entexno</a>
+            <a href="genre.php?genre=Rock">Rock</a>
+            <a href="genre.php?genre=Pop">Pop</a>
+            <a href="genre.php?genre=Blues-Jazz">Jazz/Blues</a>
+            <a href="genre.php?genre=Electronic">Electronic/House</a>
+            <a href="genre.php?genre=Hip Hop">Hip Hop</a>
+            <a href="genre.php?genre=Alternative Rock">Alternative</a>
+            <a href="genre.php?genre=Latin">Latin</a>
+            <a href="genre.php?genre=Metal">Metal</a>
+            <a href="genre.php?genre=K-Pop">K-pop</a>
+            <a href="genre.php?genre=Entexno">Entexno</a>
             <!-- MORE MUSIC GENRES HERE -->
 
         </div>
@@ -93,7 +98,7 @@
         <div class="trendingNow shadow">
             <img src="rhcp2.jpg" alt="trendingNow" class="trending">
             <div class="overlay">
-                <a href="trending.php" class="text">Trending Now
+                <a href="trending.php?id=<?=$trending_concert['id']?>" class="text">Trending Now
                     <br>
                     <h2 class="text2">click for more</h2>
                 </a>
@@ -102,39 +107,44 @@
         </div>
         <div style="background-color: #EDEDED;"></div>
         <div class="mainMenu shadow">
+        <h6 style="text-align: center;
+                    font-size: 30px;
+                    padding: 20px;
+                    font-weight: 100;">Other Popular Concerts Right Now:</h6>
             <div class="concerts">
+            
                 <a href="ladyGagaConcert.php" class="container1">
-                    <img src="images/pop/lady_gaga.png" alt="lady gaga" class="image1">
+                    <img src="images/Pop/lady_gaga.png" alt="lady gaga" class="image1">
                     <div class="overlay1">
                         <div class="text1">Lady Gaga <br> click for more </div>
                     </div>
                 </a>
                 <a href="muse.php" class="container1">
-                    <img src="images/rock/Muse.png" alt="muse" class="image1">
+                    <img src="images/Rock/Muse.png" alt="muse" class="image1">
                     <div class="overlay1">
                         <div class="text1">Muse <br> click for more </div>
                     </div>
                 </a>
                 <a href="edSheeranConcert.php" class="container1">
-                    <img src="images/pop/ed_sheeran.png" alt="ed sheeran" class="image1">
+                    <img src="images/Pop/ed_sheeran.png" alt="ed sheeran" class="image1">
                     <div class="overlay1">
                         <div class="text1">Ed Sheeran <br> click for more </div>
                     </div>
                 </a>
                 <a href="beyonceConcert.php" class="container1">
-                    <img src="images/pop/beyonce.png" alt="beyonce" class="image1">
+                    <img src="images/Pop/beyonce.png" alt="beyonce" class="image1">
                     <div class="overlay1">
                         <div class="text1">Beyonce <br> click for more </div>
                     </div>
                 </a>
                 <a href="killers.php" class="container1">
-                    <img src="images/rock/thekillers.png" alt="killers" class="image1">
+                    <img src="images/Rock/thekillers.png" alt="killers" class="image1">
                     <div class="overlay1">
                         <div class="text1">The Killers <br> click for more </div>
                     </div>
                 </a>
                 <a href="BryanAdamsConcert.php" class="container1">
-                    <img src="images/rock/bryan_adams.png" alt="bryan adams" class="image1">
+                    <img src="images/Rock/bryan_adams.png" alt="bryan adams" class="image1">
                     <div class="overlay1">
                         <div class="text1">Bryan Adams <br> click for more </div>
                     </div>
