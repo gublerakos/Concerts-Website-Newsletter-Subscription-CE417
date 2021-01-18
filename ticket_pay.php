@@ -1,23 +1,30 @@
 <?php
-include("config.php");
-include("session.php");
+    include("config.php");
+    include("session.php");
 
-$cid = $_SESSION['concertId'];
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $result=mysqli_query($conn, "select tickets from concerts where id='".$cid."'");
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    //$cid = $_SESSION['concertId'];
+	$cid = $_GET['id'];
+    $user = $_SESSION['login_user'];
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $result=mysqli_query($conn, "select tickets from concerts where id='".$cid."'");
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-    $tickets = $row['tickets'];
-    $tickets = $tickets - 1;
-    $result2=mysqli_query($conn, "update concerts set tickets = '".$tickets."'where id='".$cid."'");
-    header("Location: success.php");
-}
-
+        $tickets = $row['tickets'];
+        $tickets = $tickets - 1;
+        $result2=mysqli_query($conn, "update concerts set tickets = '".$tickets."'where id='".$cid."'");
+        // update history
+        if(isset($_SESSION['login_user'])){
+            $tempu = $_SESSION['login_user'];
+            $tempc = $_SESSION['concertId'];
+            $insert = "insert into history (user_id, concert_id) values ('".$tempu."','".$tempc."')";
+            $result = mysqli_query($conn, $insert);
+        }
+        header("Location: success.php");        
+    }
 ?>
+        
 <!DOCTYPE html>
 <html lang="eng">
-
-
 
 <head>
     <title>Art Eagle</title>

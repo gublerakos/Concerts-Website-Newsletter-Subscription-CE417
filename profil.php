@@ -84,15 +84,45 @@
                         $id =  $rows['concert_id'];
                         $conc = mysqli_query($conn,"select * from concerts where id = '$id'"); 
                         $result = mysqli_fetch_array($conc,MYSQLI_ASSOC); ?>
-                        <th> <?php echo $result['artist'];?> </th>
-                        <td> <?php echo $result['date'];?> </td>
+                        <tr>
+                            <th> <?php echo $result['artist'];?> </th>
+                            <td> <?php echo $result['date'];?> </td>
+                        </tr>
+                    <?php } ?>
+                <?php } ?>
+            </tr>
+        </table>
+
+        <h1 class="title">History</h1>
+            <table style="width:80%">
+                <tr>
+                <?php include('config.php');
+                $user_check = $_SESSION['login_user'];  
+                $ses_sql = mysqli_query($conn,"select * from history where user_id = '$user_check' ");
+                $row = $ses_sql->num_rows;
+                if($row == 0){ ?>
+                    <td style="text-align: center;">No concert tickets bought yet</td>
+                <?php }
+                else{ 
+                    while($rows = $ses_sql->fetch_assoc()) {
+                        $id =  $rows['concert_id'];
+                        $conc = mysqli_query($conn,"select * from concerts where id = '$id'"); 
+                        $result = mysqli_fetch_array($conc,MYSQLI_ASSOC); ?>
+                        <tr>
+                            <th> <?php echo $result['artist'];?> </th>
+                            <td> <?php echo $result['date'];?> </td>
+                        </tr>
                     <?php } ?>
                 <?php } ?>
             </tr>
         </table>
         <br><br><br><br><br>
 
-    </div>   
+    </div> 
+    
+    <footer>
+        <script src="footer.js"></script>
+    </footer> 
 
 
 </body>

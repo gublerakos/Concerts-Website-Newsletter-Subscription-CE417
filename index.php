@@ -5,6 +5,61 @@
     $stmt="select * from concerts where artist='Red Hot Chilly Peppers'";
     $row = mysqli_query($conn, $stmt);
     $trending_concert = $row->fetch_assoc();
+
+    $stmt="select * from concerts where artist='Lady Gaga'";
+    $row = mysqli_query($conn, $stmt);
+    $c1 = $row->fetch_assoc();
+    $id1 = $c1['id'];
+    $aname1 = $c1['artist'];
+    $type1= $c1['type'];
+    $img1 = $c1['img1'];
+    $date1 = $c1['date'];
+
+    $stmt="select * from concerts where artist='Muse'";
+    $row = mysqli_query($conn, $stmt);
+    $c2 = $row->fetch_assoc();
+    $id2 = $c2['id'];
+    $aname2 = $c2['artist'];
+    $type2 = $c2['type'];
+    $img2 = $c2['img1'];
+    $date2 = $c2['date'];
+
+
+    $stmt="select * from concerts where artist='Ed Sheeran'";
+    $row = mysqli_query($conn, $stmt);
+    $c3 = $row->fetch_assoc();
+    $id3 = $c3['id'];
+    $aname3 = $c3['artist'];
+    $type3 = $c3['type'];
+    $img3 = $c3['img1'];
+    $date3 = $c3['date'];
+
+    $stmt="select * from concerts where artist='Beyonce'";
+    $row = mysqli_query($conn, $stmt);
+    $c4 = $row->fetch_assoc();
+    $id4 = $c4['id'];
+    $aname4 = $c4['artist'];
+    $type4 = $c4['type'];
+    $img4 = $c4['img1'];
+    $date4 = $c4['date'];
+
+    $stmt="select * from concerts where artist='Killers'";
+    $row = mysqli_query($conn, $stmt);
+    $c5 = $row->fetch_assoc();
+    $id5 = $c5['id'];
+    $aname5 = $c5['artist'];
+    $type5 = $c5['type'];
+    $img5 = $c5['img1'];
+    $date5 = $c5['date'];
+
+    $stmt="select * from concerts where artist='Bryan Adams'";
+    $row = mysqli_query($conn, $stmt);
+    $c6 = $row->fetch_assoc();
+    $id6 = $c6['id'];
+    $aname6 = $c6['artist'];
+    $type6 = $c6['type'];
+    $img6 = $c6['img1'];
+    $date6 = $c6['date'];
 ?>
 
 <!DOCTYPE html>
@@ -30,15 +85,38 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            $("#myModal").modal('show');
+            if (sessionStorage.getItem('#myModal') !== 'true') {
+                $('#myModal').modal('show');
+                sessionStorage.setItem('#myModal','true');     
+            }
         });
     </script>
 </head>
 
 <body>
-
     <!-- ATTEMPT FOR BOOTSTRAP MODAL -->
-    <!-- <div id="myModal" class="modal fade">
+    
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button type="button" name="close" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Subcription</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to be the first to know everything about concerts in the world?</p>
+                    </div>
+                    <form method="post" action="subscription.php">
+                        <input type="text" name="email" class="form_control" id="more2" placeholder="Email" required><br>
+                        <div class="more">  
+                            <span><input type="submit" style="background: transparent; border:none; font-size: 22px;  color:white;" value="Subscribe to our Newsletter!"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div id="myModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -49,12 +127,13 @@
                     <p>Do you want to be the first to know everything about concerts in the world?</p>
                 </div>
                 <div class="more">
-                    <span><a href="subscribe.html">Subcribe to our Newsletter!</a> </span>
+                    <span><a href="#subscribe" class="subr">Subcribe to our Newsletter!</a> </span>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>  -->
     
+    <!-- ================================================================================================= -->
         
     <div class="textUp">
         <h1 class="letters">Find concerts and information for all your favorite bands and artists in the world. Get concert tickets, news and more with Art Eagle.</h1>
@@ -98,7 +177,7 @@
         <div class="trendingNow shadow">
             <img src="rhcp2.jpg" alt="trendingNow" class="trending">
             <div class="overlay">
-                <a href="trending.php?id=<?=$trending_concert['id']?>" class="text">Trending Now
+                <a href="concerts.php?id=<?=$trending_concert['id']?>" class="text">Trending Now
                     <br>
                     <h2 class="text2">click for more</h2>
                 </a>
@@ -113,40 +192,40 @@
                     font-weight: 100;">Other Popular Concerts Right Now:</h6>
             <div class="concerts">
             
-                <a href="ladyGagaConcert.php" class="container1">
-                    <img src="images/Pop/lady_gaga.png" alt="lady gaga" class="image1">
+                <a href="concerts.php?id=<?=$id1?>" class="container1">
+                    <img src="images/<?=$type1?>/<?=$img1?>" alt="<?=$aname1?>" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Lady Gaga <br> click for more </div>
+                        <div class="text1"><?=$aname1?> <br> <?php echo $date1; ?> </div>
                     </div>
                 </a>
-                <a href="muse.php" class="container1">
-                    <img src="images/Rock/Muse.png" alt="muse" class="image1">
+                <a href="concerts.php?id=<?=$id2?>" class="container1">
+                    <img src="images/<?=$type2?>/<?=$img2?>" alt="<?=$aname2?>" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Muse <br> click for more </div>
+                        <div class="text1"><?=$aname2?> <br> <?php echo $date2; ?> </div>
                     </div>
                 </a>
-                <a href="edSheeranConcert.php" class="container1">
-                    <img src="images/Pop/ed_sheeran.png" alt="ed sheeran" class="image1">
+                <a href="concerts.php?id=<?=$id3?>" class="container1">
+                    <img src="images/<?=$type3?>/<?=$img3?>" alt="<?=$aname3?>" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Ed Sheeran <br> click for more </div>
+                        <div class="text1"><?=$aname3?> <br> <?php echo $date3; ?> </div>
                     </div>
                 </a>
-                <a href="beyonceConcert.php" class="container1">
-                    <img src="images/Pop/beyonce.png" alt="beyonce" class="image1">
+                <a href="concerts.php?id=<?=$id4?>" class="container1">
+                   <img src="images/<?=$type4?>/<?=$img4?>" alt="<?=$aname4?>" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Beyonce <br> click for more </div>
+                        <div class="text1"><?=$aname4?> <br> <?php echo $date4; ?> </div>
                     </div>
                 </a>
-                <a href="killers.php" class="container1">
-                    <img src="images/Rock/thekillers.png" alt="killers" class="image1">
+                <a href="concerts.php?id=<?=$id5?>" class="container1">
+                    <img src="images/<?=$type5?>/<?=$img5?>" alt="<?=$aname5?>" class="image1">
                     <div class="overlay1">
-                        <div class="text1">The Killers <br> click for more </div>
+                        <div class="text1"><?=$aname5?> <br> <?php echo $date5; ?> </div>
                     </div>
                 </a>
-                <a href="BryanAdamsConcert.php" class="container1">
-                    <img src="images/Rock/bryan_adams.png" alt="bryan adams" class="image1">
+                <a href="concerts.php?id=<?=$id6?>" class="container1">
+                   <img src="images/<?=$type6?>/<?=$img6?>" alt="<?=$aname6?>" class="image1">
                     <div class="overlay1">
-                        <div class="text1">Bryan Adams <br> click for more </div>
+                        <div class="text1"><?=$aname6?> <br> <?php echo $date6; ?> </div>
                     </div>
                 </a>
 
@@ -166,8 +245,18 @@
                 <input type="submit" name="" class="form_control submit" value="SEND">
             </form>
         </div>
-
     </div>
+
+    <div class="sub shadow" id="subscribe">
+        <h1>Subscribe to our Newsletter</h1>
+        <div class="contact_form">
+            <form id="contact_form" method="post" action="subscription.php">
+                <input type="text" name="email" class="form_control" placeholder="Email" required><br>
+                <input type="submit" name="" class="form_control submit" value="SUBSCRIBE">
+            </form>
+        </div>
+    </div>
+
     <footer>
         <script src="footer.js"></script>
     </footer>

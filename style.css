@@ -242,7 +242,18 @@ body {
     margin-right: auto;
 }
 
-.contact h1 {
+.sub {
+    background-color: white;
+    margin-top: 50px;
+    height: 500px;
+    width: 1400px;
+    height: 240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact h1,
+.sub h1 {
     padding: 10px;
     font-size: 40px;
     text-align: center;

@@ -5,6 +5,11 @@
     margin: auto;
 }
 
+.mainPage {
+    text-decoration: none;
+    color: black;
+}
+
 .form {
     position: relative;
     z-index: 1;

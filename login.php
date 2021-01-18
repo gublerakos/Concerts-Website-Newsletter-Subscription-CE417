@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 session_start();
-
+$error = "Incorrect Password or Username!";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -13,18 +13,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $result=mysqli_query($conn, $sql);
 
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $active = $row['active'];
+    //$active = $row['active'];
 
     $num_results = $result->num_rows;
     if($num_results == 1){
         $_SESSION['login_user'] = $uname;
-    
+        
         header("Location: index.php");
         exit();
     }
     else{
+        $_SESSION["error"] = $error;
         header("Location: login.php");
-        echo " You Have Entered Incorrect Password";
         exit();
     }
 }
@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Art Eagle</title>
-    <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/login.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -47,8 +47,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
 
     <div class="header">
-        <img src="cockatiel-silhouette.png" alt="logo" class="logo"> Art Eagle
-        <!-- <h2>...your music concert predator.</h2> -->
+        <img src="cockatiel-silhouette.png" alt="logo" class="logo">
+        <a href="index.php" class="mainPage">Art Eagle</a>
     </div>
 
     <div class="login-page">
@@ -59,10 +59,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <!-- <input type="submit" type="submit" value="LOGIN" class="btn-login"/> -->
         <button>login</button>
         <p class="message">Not registered yet? <a href="register.php">Create an account</a></p>
+        <?php
+            if(isset($_SESSION["error"])){
+                $error = $_SESSION["error"];
+                echo "<span>$error</span>";
+            }
+        ?>  
         </form>
     </div>
     </div>
 
+    <?php
+    unset($_SESSION["error"]);
+    ?>
     <!-- <footer>
         <script src="footer.js"></script>
     </footer> -->

@@ -41,7 +41,44 @@
     padding: 15px;
     color: #FFFFFF;
     font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
     cursor: pointer;
+}
+
+.info .ticket {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #C692C8;
+    width: 80;
+	margin-left: auto;
+	margin-right: auto;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+	text-align: center;
+	display: block;
+
+}
+
+.info p {
+    font-size: 25px;
+    padding: 15px;
+    border: 2px solid pink;
+}
+
+.info .name {
+    font-size: 40px;
+    font-weight: bolder
+}
+
+iframe {
+    display: block;
+    width: 900px;
+    height: 500px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: #777; */
 }

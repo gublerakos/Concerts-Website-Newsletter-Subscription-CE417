@@ -79,6 +79,18 @@
     margin: 5px;
 }
 
+#more2 {
+    display: inline-block;
+    border-radius: 4px;
+    background: transparent;
+    border: none;
+    color: #C692C8;
+    border-bottom: 1px solid gray;
+    color: black;
+    font-size: 25px;
+    margin: 15px;
+}
+
 .more span {
     cursor: pointer;
     display: inline-block;

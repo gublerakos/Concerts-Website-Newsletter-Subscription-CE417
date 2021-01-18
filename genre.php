@@ -1,9 +1,10 @@
 <?php
     include('session.php');
-    include 'functions.php';
+    include('functions.php');
     $pdo = pdo_connect_mysql();
     
     $genre = $_GET['genre'];
+    
     // Get concerts by the genre on the url parameter
     $sql = "select * from concerts where type = '".$genre."'";
     $stmt = $pdo->prepare($sql);
@@ -46,10 +47,10 @@
         <div class="concerts">
 
             <?php foreach ($all_concerts as $concert): ?>
-                <a href="artist.php?id=<?=$concert['id']?>" class="container1">
+                <a href="concerts.php?id=<?=$concert['id']?>" class="container1">
                 <img src="./images/<?=$genre?>/<?=$concert['img1']?>"  alt="<?=$concert['artist']?>"class="image1">
                 <div class="overlay1">
-                    <div class="text1"><?=$concert['artist'] ?> <br> click for more </div>
+                    <div class="text1"><?=$concert['artist'] ?> <br> <?php echo $concert['date']; ?> </div>
                 </div>
                 </a>
                 <?php endforeach; ?>
